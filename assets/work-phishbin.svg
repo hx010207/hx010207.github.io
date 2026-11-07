@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="PHISHBIN GUARD architecture placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1b18"/><stop offset="1" stop-color="#0d0d0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g)"/>
+  <g fill="none" stroke="rgba(243,240,232,0.05)" stroke-width="1">
+    <path d="M0 250H1600M0 500H1600M0 750H1600M400 0V1000M800 0V1000M1200 0V1000"/>
+  </g>
+  <!-- architecture nodes -->
+  <g fill="none" stroke="#f7c600" stroke-width="3">
+    <rect x="210" y="430" width="230" height="140" rx="12"/>
+    <rect x="690" y="340" width="230" height="140" rx="12"/>
+    <rect x="690" y="560" width="230" height="140" rx="12"/>
+    <rect x="1170" y="430" width="230" height="140" rx="12"/>
+  </g>
+  <g stroke="rgba(243,240,232,0.35)" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M440 500 H640 M640 500 V410 H690"/>
+    <path d="M640 500 V630 H690"/>
+    <path d="M920 410 H1060 V500 H1170"/>
+    <path d="M920 630 H1060 V500"/>
+  </g>
+  <g font-family="DM Mono, monospace" font-size="22" fill="#a8a498" text-anchor="middle">
+    <text x="325" y="508">INPUT</text>
+    <text x="805" y="418">ANALYZE</text>
+    <text x="805" y="638">SCORE</text>
+    <text x="1285" y="508">REPORT</text>
+  </g>
+  <!-- tag + title -->
+  <rect x="150" y="150" width="265" height="46" rx="6" fill="#f7c600"/>
+  <text x="172" y="181" font-family="DM Mono, monospace" font-size="22" fill="#0d0d0b" letter-spacing="2">THREAT ANALYSIS</text>
+  <text x="150" y="870" font-family="Inter, sans-serif" font-weight="800" font-size="62" fill="#f3f0e8">PHISHBIN GUARD</text>
+  <text x="152" y="920" font-family="DM Mono, monospace" font-size="22" fill="#a8a498" letter-spacing="2">ADD ARCHITECTURE DIAGRAM</text>
+</svg>
