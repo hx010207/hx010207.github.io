@@ -1,3 +1,47 @@
+// ---------- preloader (video + loading % counter) ----------
+(function () {
+  const root = document.documentElement;
+  const pre = document.getElementById("preloader");
+  if (!pre) { root.classList.remove("preloading"); return; }
+  const numEl = document.getElementById("pl-num");
+  const vid = document.getElementById("pl-video");
+  const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const conn = navigator.connection || {};
+  const saveData = conn.saveData || /(^|-)2g$/.test(conn.effectiveType || "");
+  if (vid && (REDUCED || saveData)) { try { vid.pause(); } catch (e) {} vid.remove(); }
+
+  let shown = 0, target = 0, loaded = false, done = false;
+  const start = Date.now();
+
+  const timer = setInterval(() => {
+    target = loaded ? 100 : Math.min(92, target + Math.random() * 7 + 1);
+    shown += (target - shown) * 0.22;
+    if (numEl) numEl.textContent = Math.round(shown);
+    if (loaded && shown >= 99.3) {
+      clearInterval(timer);
+      if (numEl) numEl.textContent = 100;
+      finish();
+    }
+  }, 95);
+
+  const markLoaded = () => { loaded = true; };
+  // use a quick, reliable signal — don't block on the heavy preloader video
+  if (document.readyState !== "loading") setTimeout(markLoaded, 500);
+  else document.addEventListener("DOMContentLoaded", () => setTimeout(markLoaded, 500));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => setTimeout(markLoaded, 200));
+  setTimeout(markLoaded, 3000); // hard cap
+
+  function finish() {
+    if (done) return; done = true;
+    const wait = Math.max(0, 1100 - (Date.now() - start)); // min on-screen time
+    setTimeout(() => {
+      pre.classList.add("done");
+      root.classList.remove("preloading");
+      setTimeout(() => { if (pre.parentNode) pre.parentNode.removeChild(pre); }, 700);
+    }, wait);
+  }
+})();
+
 // ---------- theme: default cyber-dark ----------
 (function () {
   const saved = localStorage.getItem("theme");
