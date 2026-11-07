@@ -338,6 +338,31 @@ a { color: var(--blue); text-decoration: none; }
 [data-theme="dark"] .work.cyan  { box-shadow:var(--soft-shadow);}
 [data-theme="dark"] .work .accent{ color:var(--green);}
 
+/* ---------------- "currently building" feature (ValueAlps) ---------------- */
+.now{ position:relative; overflow:hidden; background:var(--paper); border-radius:22px;
+  padding:30px 34px; margin:0 0 56px; box-shadow:var(--soft-shadow);
+  border:1px solid rgba(17,18,18,.08); }
+[data-theme="dark"] .now{ border-color:rgba(247,198,0,.22); }
+.now::after{ content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(520px 220px at 88% -10%, rgba(46,134,193,.14), transparent 70%); }
+.now-badge{ display:inline-flex; align-items:center; gap:9px; font-family:var(--font-mono);
+  font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:18px; }
+.now-badge::before{ content:""; width:9px; height:9px; border-radius:50%; background:#2e86c1;
+  box-shadow:0 0 10px #2e86c1; animation:pulse 1.8s infinite; }
+.now-row{ display:flex; align-items:center; gap:30px; flex-wrap:wrap; position:relative; z-index:1; }
+.now-logo{ width:124px; height:124px; object-fit:contain; flex:none;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,.28)); }
+.float-on .now-logo{ animation:floaty 6s var(--e-soft) infinite; }
+.now-text{ flex:1; min-width:240px; }
+.now-text h3.display{ font-size:clamp(34px,6vw,54px); margin:0 0 8px; }
+.now-text p{ font-size:16px; color:var(--ink-soft); line-height:1.55; max-width:52ch; }
+.now-link{ display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-family:var(--font-mono);
+  font-size:13px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink);
+  border-bottom:1.6px solid var(--cyan); padding-bottom:3px; }
+[data-theme="dark"] .now-link{ border-color:var(--gold); }
+.now-link:hover{ transform:translateY(-1px); }
+@media (max-width:620px){ .now-row{ gap:20px; } .now-logo{ width:92px; height:92px; } }
+
 /* ---------------- LET'S TALK / footer ---------------- */
 .talk{ display:flex; align-items:center; gap:30px; flex-wrap:wrap; justify-content:center; padding:40px 0 10px; }
 .blob-wrap{ width:200px; flex:none; }
