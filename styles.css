@@ -666,7 +666,6 @@ html.preloading, html.preloading body{ overflow:hidden; }
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 100% 100%, 44px 44px, 44px 44px;
-  background-attachment: fixed, scroll, scroll;
 }
 [data-theme="dark"] .work{ background:#17150f !important; border:1px solid rgba(247,198,0,.16); }
 [data-theme="dark"] .work .tabtop{ background:#100f0b; color:var(--gold); border:1px solid rgba(247,198,0,.4); }
